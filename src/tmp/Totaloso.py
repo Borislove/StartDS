@@ -5,4 +5,3 @@ while True:
     if num == 0:
         print(total)
         break
-
