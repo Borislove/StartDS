@@ -12,7 +12,10 @@
 Sample Input:
 
 Sample Output:
-
 210 420 630 840
 """
 
+for i in range(100, 1000):
+    sum_digit = sum(map(int, str(i)))
+    if sum_digit * 70 == i:
+        print(i, end=' ')
