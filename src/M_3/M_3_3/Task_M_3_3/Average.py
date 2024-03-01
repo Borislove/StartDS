@@ -17,25 +17,20 @@ Sample Input:
 
 ЛинАл, 4, МатАн, 5, АнГем, 3
 Sample Output:
-
-4
-"""
-import re
-
-"""
-lst_1 = ['ЛинАл', 4, 'МатАн', 5, 'АнГем', 3]
-b = [i for i in lst_1 if type(i) == int or type(i) == float]
-print(b)
+4.0
 """
 
-# lst_1 = ['ЛинАл', 4, 'МатАн', 5, 'АнГем', 3]
-lst_1 = set(tuple(input().split(',')))
-print(lst_1)
-lst_2 = list([i for i in lst_1 if isinstance(i, int)])
-print(lst_2)
-cnt = 0
-for i in range(len(lst_2)):
-    cnt += i
-    print(lst_2)
+# ЛинАл, 4, МатАн, 5, АнГем, 3
+# tpl = tuple({"ЛинАл", 4, "МатАн", 5, "АнГем", 3})
+txt = input().replace(",", "")  # убираем запятульки
+tpl = tuple(txt.split())
+atlas = {"1", "2", "3", "4", "5", "6", "7", "8", "9", "0"}  # значения
+
+total = 0  # сумма чисел
+cnt = 0  # счетчик оценки
+for i in range(len(tpl)):
+    if tpl[i] in atlas:
+        total += int(tpl[i])
+        cnt += 1
 if cnt > 0:
-    print(sum(lst_2) // cnt)
+    print(total / cnt)
