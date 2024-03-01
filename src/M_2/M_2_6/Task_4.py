@@ -10,17 +10,10 @@
 - в первой строке - любимое число невесты;
 - в следующих трёх - количество роз в букетах женихов (A, B и C соответственно).
 
-
-
 Выходные данные
 Вывести букву жениха (A, B или C), которого выберет невеста
-
-25
-15
-10
-30
-
 """
+
 love_number = int(input())  # любимое число
 num_a = int(input())
 num_b = int(input())
@@ -30,21 +23,11 @@ dst_a = abs(love_number - num_a)
 dst_b = abs(love_number - num_b)
 dst_c = abs(love_number - num_c)
 
-minimal = min(dst_a, dst_b, dst_c)
-#print(min(dst_a, dst_b, dst_c))
+# print(min(dst_a, dst_b, dst_c))
 
-if minimal == dst_a:
-    print("A")
-elif minimal == dst_b:
-    print("B")
-elif minimal == dst_c:
-    print("C")
-"""
-if (dst_a < dst_b and dst_a < dst_c):
+if dst_a < dst_b and dst_a < dst_c:
     print('A')
-if (dst_b < dst_a and dst_b < dst_c):
+if dst_b < dst_a and dst_b < dst_c:
     print('B')
-if (dst_c < dst_a and dst_c < dst_b):
+if dst_c < dst_a and dst_c < dst_b:
     print('C')
-"""
-

@@ -1,22 +1,18 @@
 """
 Наибольшее число
-
 Напишите программу, которая считывает одно натуральное число и выводит наибольшую цифру числа.
 
 Входные данные
-На вход подается натуральное число N (
-�
-⩽
-1000 N⩽1000).
+На вход подается натуральное число N (N⩽1000).
 """
 
 # print(max(input()))
 
 num = int(input())
-tmp = 0
+max_digit = 0
 while num != 0:
     last_digit = num % 10
     num //= 10
-    if (last_digit > tmp):
-        tmp = last_digit
-print(tmp)
+    if last_digit > max_digit:
+        max_digit = last_digit
+print(max_digit)
