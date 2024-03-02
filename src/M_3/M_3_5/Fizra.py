@@ -17,22 +17,32 @@
 # 165 163 160 160 157 157 155 154
 # 162
 
-
-txt = input().split()
+txt = input().split()  # список натуральных чисел (рост учеников)
 num = int(input())  # рост Максимки
-lst = sorted(list(txt))  # сортировка
-lst_int = [eval(i) for i in lst]  # cast int
+num_index = 0
+
+# print(num)
+lst_sorted = sorted(list(txt))  # сортировка
+lst_int = [eval(i) for i in lst_sorted]  # int
 
 lst_reverse = lst_int[::-1]  # по возрастанию
+lst = list(lst_reverse)  # для удобства
 
 # ставим по росту Максимку
-for i in range(len(lst_reverse)):
-    if lst_reverse[i] == num:
-        lst_reverse.insert(i + 1, num)
+for i in range(len(lst)):
+    if num > lst[i]:
+        lst.insert(i, num)
+        num_index = i
         break
-    if lst_reverse[i] < num:
-        lst_reverse.insert(i, num)
+    if max(lst) < num:  # по максимальному росту, ставим в начало
+        lst.insert(0, num)
+        num_index = i
+        break
+    if min(lst) > num:  # по минимальному росту,ставим в конец
+        lst.append(num)
+        num_index = len(lst) - 1
         break
 
-ind = lst_reverse.index(num)
-print(ind + 1)
+print(num_index + 1)
+
+
