@@ -75,8 +75,7 @@ for i in range(len(tpl)):
     if type_8 and (tpl[i] is type):
         cnt += 1
         type_8 = False
-
-    if type_9 and (tpl[i]):
+    if type_9 and (tpl[i] is None):
         cnt += 1
         type_9 = False
 print(cnt)
